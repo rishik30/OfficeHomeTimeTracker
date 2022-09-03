@@ -29,9 +29,11 @@ const transporter = nodemailer.createTransport({
   },
 })
 
+const CRON_SCHEDULE_TIME = '0 15-21 * * 1-5' //  At minute 0 past every hour from 15 through 21 on every day-of-week from Monday through Friday.
+
 console.log('Task scheduled 😎')
-cron.schedule('* * * * *', () => {
-  console.log('running a task every minute')
+cron.schedule(CRON_SCHEDULE_TIME, () => {
+  console.log('fetching map data...')
   axios(config)
     .then(({ data }) => {
       let subject = 'ℹ️ You will be happy to drive'
