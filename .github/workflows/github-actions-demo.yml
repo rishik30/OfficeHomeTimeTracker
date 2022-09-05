@@ -9,5 +9,6 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.DROPLET_PASSPHRASE }}
           script: whoami
