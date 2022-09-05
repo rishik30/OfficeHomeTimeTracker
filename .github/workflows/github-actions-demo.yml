@@ -8,6 +8,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
+          port: 80
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.DROPLET_PASSPHRASE }}
